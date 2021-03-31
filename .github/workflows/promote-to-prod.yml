@@ -9,6 +9,7 @@ on:
 
 jobs:
   pipeline:
+    environment: default
     runs-on:
     - ubuntu-latest
     steps:
