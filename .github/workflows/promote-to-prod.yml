@@ -24,13 +24,7 @@ jobs:
 
       - name: Promote manifests
         with:
-          entrypoint: '.github/scripts/copy-files.sh'
-          args: 'nonprod-cluster/* prod-cluster'
-        uses: docker://benjvi/prify:latest
-
-      - name: Make PRs
-        with:
-          entrypoint: '.github/scripts/run-prify.sh'
-          args: 'nonprod-cluster'
+          entrypoint: '.github/scripts/promote.sh'
+          args: 'nonprod-cluster prod-cluster'
         uses: docker://benjvi/prify:latest
 
