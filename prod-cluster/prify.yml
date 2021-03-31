@@ -1,0 +1,5 @@
+branch:
+  name: "prify-nonprod-prod-promotion-{{.rand}}"
+commit:
+  message: "Autobumping manifests in {{.dir}} to update non-prod for {{.subdir_name}}"
+push: {}
