@@ -9,4 +9,6 @@ rsync -a --exclude 'prify.yml' "$SRCDIR/" "$TGTDIR/"
 git --no-pager diff --summary
 
 cd "$TGTDIR"
+git config --global user.email "promotion@gh.actions"
+git config --global user.name "PRify (promote-to-prod)"
 prify run
