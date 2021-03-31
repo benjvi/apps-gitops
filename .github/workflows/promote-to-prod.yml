@@ -9,16 +9,10 @@ on:
 
 jobs:
   pipeline:
-    runs-on:
-      - linux
     steps:
       - name: Triggered by event
         if: github.event_name == 'repository_dispatch'
         run: 'echo "Triggered by: ${{ github.event.client_payload.user }}"'
-
-      - name: Cleanup files
-        if: ${{ always() }}
-        run: 'sudo rm -r * || true'
 
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -36,9 +30,4 @@ jobs:
           entrypoint: '.github/scripts/run-prify.sh'
           args: 'nonprod-cluster'
         uses: docker://benjvi/prify:latest
-
-      - name: Cleanup files
-        if: ${{ always() }}
-        run: 'sudo rm -r * || true'
-
 
