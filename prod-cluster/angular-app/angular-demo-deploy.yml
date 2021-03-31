@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: angular-demo
+  name: angular-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: angular-demo
+    spec:
+      containers:
+      - image: index.docker.io/benjvi/angular-demo:b12.20210326.115254
+        name: angular-demo
+        env:
+        - name: PORT
+          value: "8080"
+        securityContext:
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+        resources:
+          requests: 200m
+          cpu: 0.2
+        resources: {}
+status: {}
