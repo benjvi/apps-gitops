@@ -1,4 +1,4 @@
-name: Vendor packages
+name: Promote to prod
 
 on:
   schedule:    
