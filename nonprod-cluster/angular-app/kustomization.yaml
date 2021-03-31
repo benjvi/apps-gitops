@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ci-package.yml
+images:
+- name: index.docker.io/benjvi/angular-demo
+  newName: index.docker.io/benjvi/angular-demo
+  newTag: latest
