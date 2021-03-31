@@ -9,6 +9,8 @@ on:
 
 jobs:
   pipeline:
+    runs-on:
+    - ubuntu-latest
     steps:
       - name: Triggered by event
         if: github.event_name == 'repository_dispatch'
