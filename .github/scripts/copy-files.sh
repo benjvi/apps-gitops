@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -euox pipefail
 
 SRCGLOB="$1"
 TGTDIR="$2"
