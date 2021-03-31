@@ -1,5 +1,5 @@
 branch:
-  name: "prify-nonprod-prod-promotion-{{.rand}}"
+  name: "prify-nonprod-prod-promotion-{{.subdir_name}}-{{.rand}}"
 commit:
   message: "Manifests in {{.dir}} changed to update {{.subdir_name}}"
 push: {}
