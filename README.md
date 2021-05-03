@@ -19,13 +19,19 @@ Each repo contains its own "CI" pipeline, running once code has been integrated 
 - [Angular pipeline](https://github.com/benjvi/minimal-spring-web-demo/blob/main/Jenkinsfile)
 - [Spring pipeline (incomplete)](https://github.com/benjvi/minimal-spring-web-demo/blob/main/Jenkinsfile)
 
-As the Angular example shows, a Kubernetes package is customized before the Kubernetes manifests are directly pushed to the main branch of this repo, in the corresponding nonprod folder (this is according to the strategy set in the directory by the [config file](https://github.com/benjvi/apps-gitops/blob/main/nonprod-cluster/prify.yml) for [PRify](https://github.com/benjvi/PRify).
+As the Angular example shows, a Kubernetes package is customized before the Kubernetes manifests are directly pushed to the main branch of this repo, in the corresponding nonprod folder (this is according to the strategy set in the directory by the [config file](https://github.com/benjvi/apps-gitops/blob/main/nonprod-cluster/prify.yml) for [PRify](https://github.com/benjvi/PRify)).
 
 In this way, the app repos control everything in the development flow until the app is ready for a 'real' deployment, then it hands over control to this GitOps repo.
 
 ## Deployment
 
-This repo contains the desired state for two Kubernetes environments per app, nonprod and prod. This state is made up of Kubernetes manifests. An ArgoCD "Application" is created for each app/environment combination, which continuously updates the running app with any changes made to the manifests here. So, for example, whenever code changes are made to either app, the docker image will be rebuilt, then the manifests in this repo will be updated with the new image version. ArgoCD will then cause the running apps in the nonprod envionment to be updated with the new image.
+This repo contains the desired state for two Kubernetes environments per app, nonprod and prod. This state is made up of Kubernetes manifests. An ArgoCD "Application" is created for each app/environment combination, which continuously updates the running app with any changes made to the manifests here. 
+
+So, for example, whenever code changes are made to either app:
+
+1. the docker image will be rebuilt
+2. the manifests in this repo will be updated with the new image version
+3. ArgoCD will then cause the running apps in the nonprod envionment to be updated with the new image.
 
 ## Promotion
 
