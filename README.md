@@ -5,7 +5,7 @@ This is a reference for how GitOps can be used for the delivery of multiple apps
 
 The main benefit of this approach is to refocus the pipeline around the data structures of what is to be deployed, making the delivery more observable, and allowing different actors to see and collaborate on the delivery process.
 
-Container images for these apps are built with [Cloud Native Buildpacks](https://buildpacks.io/) in [Tanzu Build Service](https://tanzu.vmware.com/build-service) to enable automatic patching via [image rebasing](https://buildpacks.io/docs/concepts/operations/rebase/). You can see how this is done in the [example Angular repo](https://github.com/benjvi/angular-realworld-example-app/tree/buildpacks)/
+Container images for these apps are built with [Cloud Native Buildpacks](https://buildpacks.io/) in [Tanzu Build Service](https://tanzu.vmware.com/build-service) to enable automatic patching via [image rebasing](https://buildpacks.io/docs/concepts/operations/rebase/). You can see how this is done in the [example Angular repo](https://github.com/benjvi/angular-realworld-example-app/tree/buildpacks)
 
 # Overview
 
