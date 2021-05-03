@@ -12,7 +12,7 @@ The system is made up of three repos. The two app repos are primarily concerned 
 ## App Repos
 
 There are two separate apps that feed into this repo:
-- [An example Angular app](hhttps://github.com/benjvi/angular-realworld-example-app)
+- [An example Angular app](https://github.com/benjvi/angular-realworld-example-app)
 - [An example Spring Boot app](https://github.com/benjvi/minimal-spring-web-demo)
 
 Each repo contains its own "CI" pipeline, running once code has been integrated into the main branch. These are defined to run on Jenkins, with Jenkinsfiles:
