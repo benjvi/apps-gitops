@@ -3,6 +3,8 @@
 
 This is a reference for how GitOps can be used for the delivery of multiple apps into multiple Kubernetes environments.
 
+The main benefit of this approach is to refocus the pipeline around the data structures of what is to be deployed, making the delivery more observable, and allowing different actors to see and collaborate on the delivery process.
+
 # Overview
 
 ![overview](https://github.com/benjvi/apps-gitops/raw/main/docs/apps-gitops-overview.png)
