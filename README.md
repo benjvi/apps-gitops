@@ -29,7 +29,7 @@ In this way, the app repos control everything in the development flow until the 
 
 ## Deployment
 
-This repo contains the desired state for two Kubernetes environments per app, nonprod and prod. This state is made up of Kubernetes manifests. An ArgoCD "Application" is created for each app/environment combination, which continuously updates the running app with any changes made to the manifests here. 
+This repo contains Kubernetes manifests used in two Kubernetes environments ("nonprod" and "prod") for each app. The manifests are duplicated so that we can clearly capture the desired state for each environment. An ArgoCD "Application" is created for each app/environment combination, which continuously updates the running app with any changes made to the manifests here. 
 
 So, for example, whenever code changes are made to either app:
 
