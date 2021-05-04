@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - ci-package.yml
 images:
-- name: index.docker.io/benjvi/angular-demo
-  newName: index.docker.io/benjvi/angular-demo
+- digest: sha256:90ea3ddb8ea2e0209de6dc7ab5dcc3ca01d9adf63075c1f2e32fe7cde1f1dc17
+  name: index.docker.io/benjvi/angular-demo
