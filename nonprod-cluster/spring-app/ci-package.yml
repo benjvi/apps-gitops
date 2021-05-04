@@ -6,7 +6,6 @@ metadata:
   labels:
     run: minimal-spring-demo
   name: minimal-spring-demo
-  namespace: default
 spec:
   externalTrafficPolicy: Cluster
   ports:
@@ -41,7 +40,7 @@ spec:
       - env:
         - name: PORT
           value: "8080"
-        image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:369b9ac6bb941b6ff51b8059b915d1fdf52e092c8c464ade64a5384f1f3f8471
+        image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:b5529485fef3b6efd64342c10fadd0619a191ff2fed18070f49a7b569a01246a
         name: minimal-spring-demo
         resources: {}
         securityContext:
