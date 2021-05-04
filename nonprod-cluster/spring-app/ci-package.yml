@@ -13,7 +13,7 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    run: minimal-spring-demo
+    app: minimal-spring-demo
   sessionAffinity: None
   type: LoadBalancer
 ---
@@ -40,7 +40,7 @@ spec:
       - env:
         - name: PORT
           value: "8080"
-        image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:b5529485fef3b6efd64342c10fadd0619a191ff2fed18070f49a7b569a01246a
+        image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:76d67c788caa3b0be656b74323299e9103289e86d399c674e14bf82d6cc60542
         name: minimal-spring-demo
         resources: {}
         securityContext:
