@@ -41,7 +41,7 @@ spec:
       - env:
         - name: PORT
           value: "8080"
-        image: index.docker.io/benjvi/minimal-spring-demo:b12.20210326.115254
+        image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:369b9ac6bb941b6ff51b8059b915d1fdf52e092c8c464ade64a5384f1f3f8471
         name: minimal-spring-demo
         resources: {}
         securityContext:
