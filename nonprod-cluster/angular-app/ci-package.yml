@@ -4,8 +4,9 @@ metadata:
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
   labels:
-    run: angular-demo
-  name: angular-demo
+    run: minimal-spring-demo
+  name: minimal-spring-demo
+  namespace: default
 spec:
   externalTrafficPolicy: Cluster
   ports:
@@ -13,7 +14,7 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: angular-demo
+    run: minimal-spring-demo
   sessionAffinity: None
   type: LoadBalancer
 ---
@@ -22,26 +23,26 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: angular-demo
-  name: angular-demo
+    app: minimal-spring-demo
+  name: minimal-spring-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: angular-demo
+      app: minimal-spring-demo
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: angular-demo
+        app: minimal-spring-demo
     spec:
       containers:
       - env:
         - name: PORT
           value: "8080"
-        image: index.docker.io/benjvi/angular-demo:b12.20210326.115254
-        name: angular-demo
+        image: index.docker.io/benjvi/minimal-spring-demo:b12.20210326.115254
+        name: minimal-spring-demo
         resources: {}
         securityContext:
           runAsNonRoot: true
