@@ -8,11 +8,9 @@ metadata:
   name: angular-demo
   namespace: default
 spec:
-  clusterIP: 10.92.2.153
   externalTrafficPolicy: Cluster
   ports:
-  - nodePort: 31152
-    port: 80
+  - port: 80
     protocol: TCP
     targetPort: 8080
   selector:
