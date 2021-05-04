@@ -11,7 +11,7 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8081
   selector:
     app: minimal-spring-demo
   sessionAffinity: None
@@ -37,10 +37,7 @@ spec:
         app: minimal-spring-demo
     spec:
       containers:
-      - env:
-        - name: PORT
-          value: "8080"
-        image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:76d67c788caa3b0be656b74323299e9103289e86d399c674e14bf82d6cc60542
+      - image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:837a57f58779af5451627025c3a9c12f4501c6cc3e8664b5b876995888f28e61
         name: minimal-spring-demo
         resources: {}
         securityContext:
