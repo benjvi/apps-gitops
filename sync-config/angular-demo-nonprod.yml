@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: angular-demo-nonprod
+  namespace: argo
+  labels: null
+  annotations: null
+spec:
+  destination:
+    namespace: nonprod-angular-app
+    server: https://34.76.1.180
+  project: apps-gitops
+  source:
+    path: nonprod-cluster/angular-app
+    repoURL: https://github.com/benjvi/apps-gitops
+    targetRevision: HEAD
+    kustomize: {}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
