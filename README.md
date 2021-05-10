@@ -19,9 +19,9 @@ There are two separate apps that feed into this repo:
 - [An example Angular app](https://github.com/benjvi/angular-realworld-example-app/tree/buildpacks)
 - [An example Spring Boot app](https://github.com/benjvi/minimal-spring-web-demo)
 
-Each repo contains its own "CI" pipeline, running once code has been integrated into the main branch. These are defined to run on Jenkins, with Jenkinsfiles:
-- [Angular pipeline](https://github.com/benjvi/angular-realworld-example-app/blob/buildpacks/Jenkinsfile)
-- [Spring pipeline (incomplete)](https://github.com/benjvi/minimal-spring-web-demo/blob/main/Jenkinsfile)
+Each repo contains its own "CI" pipeline, running once code has been integrated into the main branch: 
+- [Angular pipeline](https://github.com/benjvi/angular-realworld-example-app/blob/buildpacks/Jenkinsfile) - defined to run in Jenkins via (mostly) declarative pipeline
+- [Spring pipeline](https://github.com/benjvi/minimal-spring-web-demo/blob/main/.github/workflows/deploy.yml) - defined to run in Github Actions
 
 As the Angular example shows, a Kubernetes package is customized before the Kubernetes manifests are directly pushed to the main branch of this repo, in the corresponding nonprod folder (this is according to the strategy set in the directory by the [config file](https://github.com/benjvi/apps-gitops/blob/main/nonprod-cluster/prify.yml) for [PRify](https://github.com/benjvi/PRify)).
 
