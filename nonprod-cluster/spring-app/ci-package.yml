@@ -37,7 +37,7 @@ spec:
         app: minimal-spring-demo
     spec:
       containers:
-      - image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:447f7bd90c500c1210f49818db82fff625a1b134b84526b33fd352861de1ea7a
+      - image: index.docker.io/benjvi/minimal-spring-web-demo@sha256:bf0e2f468357b72c3a1758169daa9dc4993a944bb6020666ee7898b5459a9f91
         name: minimal-spring-demo
         resources: {}
         securityContext:
