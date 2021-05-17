@@ -5,7 +5,8 @@ SRCDIR="$1"
 TGTDIR="$2"
 
 mkdir -p "$TGTDIR"
-rsync -a --exclude 'prify.yml' "$SRCDIR/" "$TGTDIR/"
+# options: archive, recursive, permissions, checksum (file matching), delete added files
+rsync -arpch --delete  --exclude 'prify.yml' --exclude 'env-specific*' "$SRCDIR/" "$TGTDIR/"
 git --no-pager diff --summary
 
 cd "$TGTDIR"
