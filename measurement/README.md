@@ -15,6 +15,6 @@ Now the sqlite database is ready to be queried.
 
 One simple option to visualize the data is to use Metabase. Metabase is an application that has the ability to load data from a sqlite file on the local filesystem. You can set up questions (graphs) using the SQL queries in `metabase-queries`, and choose how to visualize them. You can then display them in a dashboard. This might end up looking something like this:
 
-![example metabase dashboard]()
+![example metabase dashboard](https://github.com/benjvi/apps-gitops/blob/main/measurement/metabase-dashboard.png)
 
 One note - you may want to also add corresponding panels for Prod Delivery Throughput and Delivery Lead Time. These aren't shown in the image due to lack of data.
