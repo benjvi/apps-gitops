@@ -6,6 +6,11 @@ on:
   repository_dispatch:
     types:
       - "promote-to-prod" 
+  push:
+   branches:
+   - main
+   paths:
+   - nonprod-cluster/**
 
 jobs:
   pipeline:
