@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  labels:
+    run: angular-demo
+  name: angular-demo
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: angular-demo
+  sessionAffinity: None
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: angular-demo
+  name: angular-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: angular-demo
+    spec:
+      containers:
+      - env:
+        - name: PORT
+          value: "8080"
+        image: index.docker.io/benjvi/angular-demo:b12.20210326.115254
+        name: angular-demo
+        resources: {}
+        securityContext:
+          runAsNonRoot: true
+status: {}
